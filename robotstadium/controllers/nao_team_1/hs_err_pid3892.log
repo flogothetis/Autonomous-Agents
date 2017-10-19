@@ -1,0 +1,219 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6b302065, pid=3892, tid=0x00002bc0
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_151-b12) (build 1.8.0_151-b12)
+# Java VM: Java HotSpot(TM) Client VM (25.151-b12 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [JavaController.dll+0x2065]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0097c000):  JavaThread "main" [_thread_in_native, id=11200, stack(0x008d0000,0x00920000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x14c47ed8, EBX=0x00004b00, ECX=0x00000000, EDX=0x00000000
+ESP=0x0091f9a0, EBP=0x021b3a90, ESI=0x00000000, EDI=0x0097c140
+EIP=0x6b302065, EFLAGS=0x00010206
+
+Top of Stack: (sp=0x0091f9a0)
+0x0091f9a0:   0097c000 021b3a90 00000000 68c81874
+0x0091f9b0:   0000000f 022dc235 0097a708 0042bbc0
+0x0091f9c0:   00000000 00004b00 0091fa34 6b303246
+0x0091f9d0:   0097c140 00000000 00004b00 14638318
+0x0091f9e0:   14638318 14638318 0042bbc0 00000000
+0x0091f9f0:   14638318 14638318 0097c000 0229d3d3
+0x0091fa00:   0097c140 0091fa3c 0042bbc0 00000000
+0x0091fa10:   0091fa44 0091fa14 14638318 0091fa4c 
+
+Instructions: (pc=0x6b302065)
+0x6b302045:   00 00 00 89 6c 24 04 89 3c 24 ff 90 ec 02 00 00
+0x6b302055:   83 ec 0c 85 c0 74 36 85 db 7e 12 ba 00 00 00 00
+0x6b302065:   8b 0c 96 89 0c 90 83 c2 01 39 da 75 f3 8b 17 c7
+0x6b302075:   44 24 0c 00 00 00 00 89 44 24 08 89 6c 24 04 89 
+
+
+Register to memory mapping:
+
+EAX=0x14c47ed8 is an unknown value
+EBX=0x00004b00 is an unknown value
+ECX=0x00000000 is an unknown value
+EDX=0x00000000 is an unknown value
+ESP=0x0091f9a0 is pointing into the stack for thread: 0x0097c000
+EBP=0x021b3a90 is an unknown value
+ESI=0x00000000 is an unknown value
+EDI=0x0097c140 is an unknown value
+
+
+Stack: [0x008d0000,0x00920000],  sp=0x0091f9a0,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [JavaController.dll+0x2065]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.cyberbotics.webots.controller.wrapperJNI.Camera_getImage(JLcom/cyberbotics/webots/controller/Camera;)[I+0
+j  com.cyberbotics.webots.controller.Camera.getImage()[I+5
+j  NaoCam.processImage()V+12
+j  Player.runStep()V+15
+j  FieldPlayer.runStep()V+1
+j  FieldPlayer.run()V+1
+j  SoccerPlayer.main([Ljava/lang/String;)V+42
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02236800 JavaThread "Service Thread" daemon [_thread_blocked, id=4628, stack(0x14b40000,0x14b90000)]
+  0x0221f400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=8, stack(0x14ab0000,0x14b00000)]
+  0x0221e400 JavaThread "Attach Listener" daemon [_thread_blocked, id=8704, stack(0x14a20000,0x14a70000)]
+  0x0221c400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10580, stack(0x14990000,0x149e0000)]
+  0x02213c00 JavaThread "Finalizer" daemon [_thread_blocked, id=4612, stack(0x043b0000,0x04400000)]
+  0x021b6c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=980, stack(0x04320000,0x04370000)]
+=>0x0097c000 JavaThread "main" [_thread_in_native, id=11200, stack(0x008d0000,0x00920000)]
+
+Other Threads:
+  0x021b2000 VMThread [stack: 0x00920000,0x00970000] [id=4664]
+  0x02254000 WatcherThread [stack: 0x14bd0000,0x14c20000] [id=2908]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 1086K [0x04400000, 0x04950000, 0x09950000)
+  eden space 4416K,  24% used [0x04400000, 0x0450fb50, 0x04850000)
+  from space 512K,   0% used [0x04850000, 0x04850000, 0x048d0000)
+  to   space 512K,   0% used [0x048d0000, 0x048d0000, 0x04950000)
+ tenured generation   total 10944K, used 0K [0x09950000, 0x0a400000, 0x14400000)
+   the space 10944K,   0% used [0x09950000, 0x09950000, 0x09950200, 0x0a400000)
+ Metaspace       used 252K, capacity 2376K, committed 2496K, reserved 4480K
+
+Card table byte_map: [0x04290000,0x04320000] byte_map_base: 0x0426e000
+
+Polling page: 0x003a0000
+
+CodeCache: size=32768Kb used=693Kb max_used=693Kb free=32074Kb
+ bounds [0x02290000, 0x02340000, 0x04290000]
+ total_blobs=178 nmethods=26 adapters=84
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.158 Thread 0x0221f400   22             java.lang.String::startsWith (72 bytes)
+Event: 0.158 Thread 0x0221f400 nmethod 22 0x0233b348 code [0x0233b450, 0x0233b580]
+Event: 0.161 Thread 0x0221f400   23             java.lang.Math::min (11 bytes)
+Event: 0.161 Thread 0x0221f400 nmethod 23 0x0233b6c8 code [0x0233b7c0, 0x0233b830]
+Event: 0.161 Thread 0x0221f400   24             sun.net.www.ParseUtil::encodePath (336 bytes)
+Event: 0.162 Thread 0x0221f400 nmethod 24 0x0233b888 code [0x0233ba30, 0x0233c0f8]
+Event: 0.162 Thread 0x0221f400   25             sun.nio.cs.UTF_8$Encoder::encode (359 bytes)
+Event: 0.162 Thread 0x0221f400 nmethod 25 0x0233c748 code [0x0233c890, 0x0233ccd8]
+Event: 0.162 Thread 0x0221f400   26             sun.misc.MetaIndex::mayContain (51 bytes)
+Event: 0.163 Thread 0x0221f400 nmethod 26 0x0233d1c8 code [0x0233d2f0, 0x0233d468]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.021 Thread 0x0097c000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x044079c0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u151\9699\hotspot\src\share\vm
+Event: 0.021 Thread 0x0097c000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x04407c90) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u151\9699\hotspot\src\share\vm\prims\jni.cpp, li
+
+Events (10 events):
+Event: 0.161 loading class com/cyberbotics/webots/controller/Emitter
+Event: 0.161 loading class com/cyberbotics/webots/controller/Emitter done
+Event: 0.162 loading class com/cyberbotics/webots/controller/Receiver
+Event: 0.162 loading class com/cyberbotics/webots/controller/Receiver done
+Event: 0.162 loading class com/cyberbotics/webots/controller/GPS
+Event: 0.162 loading class com/cyberbotics/webots/controller/GPS done
+Event: 0.162 loading class com/cyberbotics/webots/controller/DistanceSensor
+Event: 0.162 loading class com/cyberbotics/webots/controller/DistanceSensor done
+Event: 0.162 loading class com/cyberbotics/webots/controller/Motion
+Event: 0.162 loading class com/cyberbotics/webots/controller/Motion done
+
+
+Dynamic libraries:
+0x00890000 - 0x008c3000 	C:\Program Files (x86)\Java\jdk1.8.0_151\bin\javaw.exe
+0x76f60000 - 0x770ee000 	C:\Windows\SYSTEM32\ntdll.dll
+0x766f0000 - 0x767c0000 	C:\Windows\System32\KERNEL32.DLL
+0x71510000 - 0x7153f000 	D:\avast\aswhookx.dll
+0x73bc0000 - 0x73d82000 	C:\Windows\System32\KERNELBASE.dll
+0x73b10000 - 0x73b87000 	C:\Windows\System32\ADVAPI32.dll
+0x76490000 - 0x7654d000 	C:\Windows\System32\msvcrt.dll
+0x746c0000 - 0x74701000 	C:\Windows\System32\sechost.dll
+0x73a50000 - 0x73b10000 	C:\Windows\System32\RPCRT4.dll
+0x73a30000 - 0x73a50000 	C:\Windows\System32\SspiCli.dll
+0x73a20000 - 0x73a2a000 	C:\Windows\System32\CRYPTBASE.dll
+0x73f00000 - 0x73f57000 	C:\Windows\System32\bcryptPrimitives.dll
+0x765b0000 - 0x766ec000 	C:\Windows\System32\USER32.dll
+0x73ba0000 - 0x73bb6000 	C:\Windows\System32\win32u.dll
+0x74490000 - 0x744b1000 	C:\Windows\System32\GDI32.dll
+0x75c10000 - 0x75d68000 	C:\Windows\System32\gdi32full.dll
+0x767c0000 - 0x76839000 	C:\Windows\System32\msvcp_win.dll
+0x76d50000 - 0x76e68000 	C:\Windows\System32\ucrtbase.dll
+0x6a7f0000 - 0x6a9fe000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.15063.483_none_6dad63fefc436da8\COMCTL32.dll
+0x73f90000 - 0x741c8000 	C:\Windows\System32\combase.dll
+0x73f60000 - 0x73f85000 	C:\Windows\System32\IMM32.DLL
+0x6c970000 - 0x6ca2f000 	C:\Program Files (x86)\Java\jdk1.8.0_151\jre\bin\msvcr100.dll
+0x55060000 - 0x5542e000 	C:\Program Files (x86)\Java\jdk1.8.0_151\jre\bin\client\jvm.dll
+0x76c60000 - 0x76c66000 	C:\Windows\System32\PSAPI.DLL
+0x735c0000 - 0x735c8000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x73e90000 - 0x73ef7000 	C:\Windows\System32\WS2_32.dll
+0x708f0000 - 0x70914000 	C:\Windows\SYSTEM32\WINMM.dll
+0x73a10000 - 0x73a18000 	C:\Windows\SYSTEM32\VERSION.dll
+0x707b0000 - 0x707d3000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x741d0000 - 0x74209000 	C:\Windows\System32\cfgmgr32.dll
+0x71150000 - 0x7115c000 	C:\Program Files (x86)\Java\jdk1.8.0_151\jre\bin\verify.dll
+0x6faa0000 - 0x6fac1000 	C:\Program Files (x86)\Java\jdk1.8.0_151\jre\bin\java.dll
+0x701b0000 - 0x701c4000 	C:\Program Files (x86)\Java\jdk1.8.0_151\jre\bin\zip.dll
+0x748c0000 - 0x75c08000 	C:\Windows\System32\SHELL32.dll
+0x76e70000 - 0x76efc000 	C:\Windows\System32\shcore.dll
+0x75d70000 - 0x762f7000 	C:\Windows\System32\windows.storage.dll
+0x744c0000 - 0x74505000 	C:\Windows\System32\shlwapi.dll
+0x76480000 - 0x7648e000 	C:\Windows\System32\kernel.appcore.dll
+0x74860000 - 0x748a5000 	C:\Windows\System32\powrprof.dll
+0x746b0000 - 0x746c0000 	C:\Windows\System32\profapi.dll
+0x6b300000 - 0x6b330000 	D:\Webots\lib\JavaController.dll
+0x68c80000 - 0x68cb1000 	D:\Webots\lib\CppController.dll
+0x6e940000 - 0x6e9bd000 	D:\Webots\mingw\bin\libgcc_s_dw2-1.dll
+0x6fc40000 - 0x6fd36000 	D:\Webots\mingw\bin\libstdc++-6.dll
+0x6b0c0000 - 0x6b12c000 	D:\Webots\lib\Controller.dll
+0x64940000 - 0x64959000 	D:\Webots\mingw\bin\libwinpthread-1.dll
+0x72ba0000 - 0x72cfd000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+java_command: nao_team_1 2 1
+java_class_path (initial): D:/Webots/lib/Controller.jar;D:/prosopikos fakelos 2/Autonomous Agents/Lab/Lab1/robotstadium/controllers/nao_team_1/
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=D:\Webots\lib;D:\Webots\mingw\bin;D:\Webots\msys\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\hadoop-2.7.3\bin\;C:\Program Files (x86)\Java\jdk1.8.0_151\bin;C:\hadoop-2.7.3\sbin\;C:\Users\Flogothetis\AppData\Local\Microsoft\WindowsApps;C:\Users\Flogothetis\AppData\Local\atom\bin;D:\Webots\resources\projects\default\libraries\qt_utils;D:\Webots\resources\projects\robots\darwin-op\libraries\darwin;D:\Webots\resources\projects\robots\darwin-op\libraries\managers;D:\Webots\resources\projects\robots\youbot\libraries\youbot_control
+USERNAME=Flogothetis
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 15063 (10.0.15063.296)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 8276004k(4728364k free), swap 9586724k(5225924k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.151-b12) for windows-x86 JRE (1.8.0_151-b12), built on Sep  5 2017 19:31:49 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Oct 18 01:23:58 2017
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
