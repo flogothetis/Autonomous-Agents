@@ -1,0 +1,51 @@
+#VRML_SIM V7.2.5 utf8
+# Flag for the Rat's Life contest
+
+PROTO Flag [
+  field MFString image "flags/rat0.png"
+]
+{
+DEF EPUCK_FLAG Transform {
+  translation 0 0.015 -0.005
+  rotation 1 0 0 0
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.8 0.8 0.8
+          specularColor 0.5 0.5 0.5
+        }
+        texture ImageTexture {
+          url IS image
+        }
+      }
+      geometry IndexedFaceSet {
+        coord Coordinate {
+          point [
+             -0.015 -0.015 0
+              0.015 -0.015 0
+              0.015  0.015 0
+             -0.015  0.015 0
+          ]
+        }
+        texCoord TextureCoordinate {
+          point [
+            0 0
+            1 0
+            1 1
+            0 1
+          ]
+        }
+        coordIndex [
+          0, 1, 2, 3, -1
+          3, 2, 1, 0, -1
+        ]
+        texCoordIndex [
+          0, 1, 2, 3, -1
+          2, 3, 0, 1, -1
+        ]
+      }
+    }
+  ]
+}
+}
