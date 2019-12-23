@@ -9,4 +9,4 @@ The folders include:
 
 -Nao Simulation: Simulation of Nao Robot playing football and working out (Code: Java).
 
--Nao Real Robot: Νao throw the ball away (Code: Java).
+-Nao Real Robot: Νao throws the ball away (Code: Java).
