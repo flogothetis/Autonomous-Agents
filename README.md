@@ -5,8 +5,8 @@ The lab experiments encompassed work on both virtual simulator of robots (Webots
 
 The folders include:
 
--E-puck Robot: Simulation of a robot that reads landsmarks and walk through a maze (Code: Java).
+- E-puck Robot: Simulation of a robot that reads landsmarks and walk through a maze (Code: Java).
 
--Nao Simulation: Simulation of Nao Robot playing football and working out (Code: Java).
+- Nao Simulation: Simulation of Nao Robot playing football and working out (Code: Java).
 
--Nao Real Robot: Νao throws the ball away (Code: Java).
+- Nao Real Robot: Νao throws the ball away (Code: Java).
