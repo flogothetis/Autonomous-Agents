@@ -1,7 +1,8 @@
-@Author : Logothetis Fragkoulis
+# Nao-Robot-Project
+
 
 This project was developed for the needs of "Autonomous Agents" course of Technical University of Crete.
-The lab experiments encompassed work on both virtual simulator of robots (Webots Simulator) and Nao real robots.
+The lab experiments embraces work for both virtual simulator of robots (Webots Simulator) and Nao real robots.
 
 The folders include:
 
